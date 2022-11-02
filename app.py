@@ -76,7 +76,6 @@ st.markdown(
 "Pick a random visual, make two visual changes to it, document those changes, and plot the visual.  \n"
 "You may need to pip install in our terminal for example pip install vega_datasets "
 )
-from vega_datasets import data
 
 st.markdown(
 "**QUESTION 4 ANSWER**: From HW Review Video."
@@ -97,7 +96,8 @@ st.markdown(
 "**QUESTION 4 ANSWER**: What I personally did for question 4."
 )
 
-source = data.us_employment()
+source = pd.read_csv('us-employment.csv')
+st.write(source)
 
 negative = alt.Chart(source).mark_bar(
     cornerRadiusTopLeft=3,
